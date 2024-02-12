@@ -1,0 +1,72 @@
+@use "partil"; 
+
+//Generel styling
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: partil.$font;
+    background-color: partil.$bg-color;
+
+        p{
+            font-size: 16px;
+            color: partil.$txt-color;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            font-weight: 600;
+            color: partial.$txt-color;
+        }
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+}
+
+//navigation
+
+header{
+    grid-column: 1/6;
+    @include partil.flex($justify: space-between);
+    background-color: partil.$nav-color;
+    border-bottom: 4px solid partil.$primary-color;
+}
+
+nav{
+    height: 4em;
+    padding: 1em;
+    @include partil.flex($justify:space-between);
+
+        img{
+            width: 70px;
+        }
+
+        ul{
+            @include partil.flex;
+            list-style-type:none;
+        }
+
+        a {
+            color: partil.$txt-color;
+            padding: partial.$padding;
+            margin: partil.$padding;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover{
+            color: partil.$primary-color;
+        }
+}
