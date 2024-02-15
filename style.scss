@@ -19,7 +19,7 @@ body{
 
         h1, h2, h3, h4, h5, h6{
             font-weight: 600;
-            color: partial.$txt-color;
+            color: partil.$txt-color;
         }
 }
 
@@ -59,7 +59,7 @@ nav{
 
         a {
             color: partil.$txt-color;
-            padding: partial.$padding;
+            padding: partil.$padding;
             margin: partil.$padding;
             font-size: 20px;
             font-weight: bold;
@@ -70,3 +70,153 @@ nav{
             color: partil.$primary-color;
         }
 }
+
+.mobile-nav{
+    .bars{
+        display: none;
+        cursor: pointer;
+    }
+}
+
+.toggleShow{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.active{
+    color: partil.$primary-color;
+}
+
+//header billede 
+
+.header-img{
+    position: relative;
+    margin-bottom: 1em;
+
+        .banner-tekst{
+            position: absolute;
+            top: 25%;
+            left: 5%;
+        }
+
+        h1{
+            font-size: 3.5vw;
+        }
+
+        p{
+            font-size: 2vw;
+        }
+
+        a{
+            @include partil.btn;
+            position: absolute;
+
+                &:hover{
+                    background-color: partil.$secondary-color;
+                    transition: 0.3s ease-in-out;
+                }
+        }
+}
+
+.bg-billede-mobil{
+    display: none;
+}
+
+/*forside*/
+
+main{
+    grid-column: 1/6;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+
+        h2{
+            grid-column: 1/7;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .cta-wrapper{
+            grid-column: 1/7;
+            display: flex;
+            justify-content: space-around;
+        }
+}
+
+/*CTA bokse*/
+
+.cta-1, .cta-2, .cta-3{
+    @include partil.cta-box;
+
+        img{
+            margin: 0 auto;
+            width: 60%;
+            display: block;
+        }
+
+        p{
+            margin-bottom: 2em;
+        }
+
+        a{
+            @include partil.btn;
+            display: block;
+
+                &:hover{
+                    background-color: partil.$secondary-color;
+                    transition: 0.4s ease-in-out;
+                }
+               
+        }
+}
+
+
+/*tekst og billede sektion*/
+
+.txt-img-section{
+    grid-column: 1/7;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.tekst{
+    grid-column: 1/5;
+    background-color: partil.$secondary-color;
+    padding: 2em 4em 4em 4em;
+
+        p{
+            color: partil.$bg-color;
+        }
+
+        p:nth-of-type(4){
+            margin-bottom: 3em;
+        }
+
+        h2{
+            color: partil.$bg-color;
+            text-align: left;
+        }
+
+}
+
+.secondary-btn{
+    @include partil.btn($bg-color: transparent);
+    border: 1px solid #fff;
+
+        &:hover{
+            background-color: #fff;
+            color: partil.$secondary-color;
+            transition: 0.4s ease-in-out;
+        }
+}
+
+.billede{
+    grid-column: 5/8;
+    background-image: url(img/presentation.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*Kontaktformular*/
+
